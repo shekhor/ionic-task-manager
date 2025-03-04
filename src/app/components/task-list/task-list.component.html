@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Task Manager</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let task of tasks">
+      <ion-label>
+        <h2>{{ task.title }}</h2>
+        <p>{{ task.description }}</p>
+      </ion-label>
+      <ion-checkbox
+        [checked]="task.completed"
+        (ionChange)="toggleCompletion(task.id)"
+      ></ion-checkbox>
+      <ion-button (click)="cancelTask(task.id)" color="danger">
+        Cancel
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="full" routerLink="completed-tasks">
+    View Completed Tasks
+  </ion-button>
+  <ion-button expand="full" routerLink="cancelled-tasks">
+    View Cancelled Tasks
+  </ion-button>
+  
+</ion-content> 

@@ -1,0 +1,13 @@
+<ion-item>
+  <ion-input
+    [(ngModel)]="newTaskTitle"
+    placeholder="Enter task title"
+  ></ion-input>
+</ion-item>
+<ion-item>
+  <ion-input
+    [(ngModel)]="newTaskDescription"
+    placeholder="Enter task description"
+  ></ion-input>
+</ion-item>
+<ion-button expand="full" (click)="addTask()">Add Task</ion-button>
