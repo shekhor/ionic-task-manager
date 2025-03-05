@@ -12,8 +12,11 @@ export class TaskService {
 
   // Get all tasks
   getTasks(): Task[] {
+    console.log("Tasks in Service:", this.tasks); // Debugging
     return this.tasks;
   }
+  
+  
 
   // Get completed tasks
   getCompletedTasks(): Task[] {
@@ -35,6 +38,7 @@ export class TaskService {
       cancelled: false,
     };
     this.tasks.push(newTask);
+
   }
 
   // Mark a task as completed
@@ -55,6 +59,10 @@ export class TaskService {
 
   // Delete a task
   deleteTask(id: number): void {
-    this.tasks = this.tasks.filter((t) => t.id !== id);
+    const task = this.tasks.find((t) => t.id === id);
+    if (task) {
+      task.cancelled = true;
+    }
+    
   }
 }

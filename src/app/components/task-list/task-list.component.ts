@@ -4,11 +4,12 @@ import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms'; 
 import { TaskService } from 'src/app/task.service';
 import { Task } from '../../models/task.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-task-list',
   standalone: true, 
-  imports: [CommonModule, IonicModule, FormsModule], 
+  imports: [CommonModule, IonicModule, FormsModule, RouterModule], 
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.scss'],
 })
@@ -23,6 +24,7 @@ export class TaskListComponent implements OnInit {
 
   loadTasks(): void {
     this.tasks = this.taskService.getTasks();
+    
   }
 
   toggleCompletion(id: number): void {

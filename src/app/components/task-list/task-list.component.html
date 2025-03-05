@@ -21,11 +21,12 @@
     </ion-item>
   </ion-list>
 
-  <ion-button expand="full" routerLink="completed-tasks">
+  <ion-button expand="full" [routerLink]="'/completed-tasks'">
     View Completed Tasks
-  </ion-button>
-  <ion-button expand="full" routerLink="cancelled-tasks">
+</ion-button>
+<ion-button expand="full" [routerLink]="'/cancelled-tasks'">
     View Cancelled Tasks
-  </ion-button>
+</ion-button>
+
   
 </ion-content> 
